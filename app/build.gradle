@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "br.com.mastercard.masterpasssample"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    supportLibraryVersion = '26.0.2'
+    retrofitVersion = '2.3.0'
+    timberVersion = '4.4.0'
+    eventbusVersion = '3.0.0'
+    timberVersion = '4.5.1'
+    butterKnifeVersion = '8.7.0'
+    daggerVersion = '2.11'
+    glideVersion = '3.7.0'
+    androidSvgVersion = '1.2.1'
+    materialDialogVersion = '0.9.4.7'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile "com.android.support:design:$supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support:customtabs:$supportLibraryVersion"
+
+    compile "org.greenrobot:eventbus:$eventbusVersion"
+
+    compile "com.jakewharton.timber:timber:$timberVersion"
+
+    apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+
+    compile "com.github.bumptech.glide:glide:$glideVersion"
+    compile "com.caverock:androidsvg:$androidSvgVersion"
+
+//    compile "com.afollestad.material-dialogs:commons:$materialDialogVersion"
+}

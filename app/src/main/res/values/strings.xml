@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MasterpassSample</string>
+    <string name="masterpass_callback">Masterpass callback:</string>
+</resources>
